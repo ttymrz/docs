@@ -459,7 +459,7 @@ static int modeset_create_fb(int fd, struct modeset_dev *dev)
 	dev->handle = creq.handle;
 
 	/* create framebuffer object for the dumb-buffer */
-	ret = drmModeAddFB(fd, dev->width, dev->height, 24, 32, dev->stride,
+	ret = drmModeAddFB(fd, dev->width, dev->height, 32, 32, dev->stride,
 			   dev->handle, &dev->fb);
 	if (ret) {
 		fprintf(stderr, "cannot create framebuffer (%d): %m\n",
